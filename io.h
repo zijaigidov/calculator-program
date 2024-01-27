@@ -6,4 +6,7 @@
 // Print the calculator menu.
 void printCalculatorMenu();
 
+// Get an operand from the user.
+double getOperand();
+
 #endif

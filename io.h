@@ -12,4 +12,7 @@ double getOperand();
 // Get a mathematical operator from the user.
 char getOperator();
 
+// Print a mathematical operation.
+void printOperation(double x, char op, double y);
+
 #endif

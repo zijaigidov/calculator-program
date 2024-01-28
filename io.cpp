@@ -96,3 +96,36 @@ char getOperator()
 		}
 	}
 }
+
+void printOperation(double x, char op, double y)
+{
+	using namespace MathOperations;
+
+	switch (op)
+	{
+	case addition:
+		std::cout << x << " + " << y << " = " << x + y << '\n';
+		break;
+
+	case subtraction:
+		std::cout << x << " - " << y << " = " << x - y << '\n';
+		break;
+
+	case multiplicationStar:
+	case multiplicationCross:
+		std::cout << x << ' ' << op << ' ' << y << " = " << x * y << '\n';
+		break;
+
+	case division:
+	{
+		if (y == 0)
+		{
+			std::cout << "Error: cannot divide by zero\n";
+			break;
+		}
+
+		std::cout << x << " / " << y << " = " << x / y << '\n';
+		break;
+	}
+	}
+}

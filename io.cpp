@@ -46,14 +46,14 @@ double getOperand()
 		if (!std::cin)
 		{
 			handleFailedExtraction();
-			std::cout << "Please enter a valid number.\n\n";
+			std::cout << "Please enter a valid number.\n";
 			continue;
 		}
 		// Check if any characters haven't been extracted
 		if (!inputBufferIsEmpty())
 		{
 			clearInputBuffer();
-			std::cout << "Please enter a valid number.\n\n";
+			std::cout << "Please enter a valid number.\n";
 			continue;
 		}
 
@@ -77,7 +77,7 @@ char getOperator()
 		if (!inputBufferIsEmpty())
 		{
 			clearInputBuffer();
-			std::cout << "Please enter a valid operator.\n\n";
+			std::cout << "Please enter a valid operator.\n";
 			continue;
 		}
 
@@ -92,7 +92,7 @@ char getOperator()
 		case division:
 			return op;
 		default:
-			std::cout << "Please enter a valid operator.\n\n";
+			std::cout << "Please enter a valid operator.\n";
 		}
 	}
 }
@@ -141,18 +141,20 @@ bool keepCalculating()
 		if (!inputBufferIsEmpty())
 		{
 			clearInputBuffer();
-			std::cout << "Please enter 'y' or 'n'\n\n";
+			std::cout << "Please enter 'y' or 'n'\n";
 			continue;
 		}
 
 		switch (ans)
 		{
 		case 'y':
+			std::cout << '\n';
 			return true;
 		case 'n':
+			std::cout << '\n';
 			return false;
 		default:
-			std::cout << "Please enter 'y' or 'n'\n\n";
+			std::cout << "Please enter 'y' or 'n'\n";
 		}
 	}
 }

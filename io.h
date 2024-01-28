@@ -15,4 +15,7 @@ char getOperator();
 // Print a mathematical operation.
 void printOperation(double x, char op, double y);
 
+// Returns true if the user wishes to keep calculating, otherwise false.
+bool keepCalculating();
+
 #endif

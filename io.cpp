@@ -129,3 +129,30 @@ void printOperation(double x, char op, double y)
 	}
 	}
 }
+
+bool keepCalculating()
+{
+	while (true)
+	{
+		char ans{};
+		std::cout << "Would you like to keep calculating? (y/n): ";
+		std::cin >> ans;
+
+		if (!inputBufferIsEmpty())
+		{
+			clearInputBuffer();
+			std::cout << "Please enter 'y' or 'n'\n\n";
+			continue;
+		}
+
+		switch (ans)
+		{
+		case 'y':
+			return true;
+		case 'n':
+			return false;
+		default:
+			std::cout << "Please enter 'y' or 'n'\n\n";
+		}
+	}
+}

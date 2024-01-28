@@ -6,10 +6,13 @@
 int main()
 {
     printCalculatorMenu();
-    auto firstOperand { getOperand() };
-    auto mathOperator { getOperator() };
-    auto secondOperand { getOperand() };
-    printOperation(firstOperand, mathOperator, secondOperand);
+    do
+    {
+        auto firstOperand{ getOperand() };
+        auto mathOperator{ getOperator() };
+        auto secondOperand{ getOperand() };
+        printOperation(firstOperand, mathOperator, secondOperand);
+    } while (keepCalculating());
 
     return 0;
 }

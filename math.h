@@ -10,7 +10,6 @@ namespace MathOperations
 	inline constexpr char multiplicationStar  { '*' };
 	inline constexpr char multiplicationCross { 'x' };
 	inline constexpr char division            { '/' };
-	inline constexpr char modulo              { '%' };
 }
 
 #endif

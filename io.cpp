@@ -15,7 +15,6 @@ void printCalculatorMenu()
 				 " - Subtraction (-)      \n"
 				 " - Multiplication (*, x)\n"
 				 " - Division (/)         \n"
-				 " - Modulo (%)           \n"
 			 	 "========================\n";
 }
 
@@ -91,7 +90,6 @@ char getOperator()
 		case multiplicationStar:  // '*' character
 		case multiplicationCross: // 'x' character
 		case division:
-		case modulo:
 			return op;
 		default:
 			std::cout << "Please enter a valid operator.\n\n";

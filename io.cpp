@@ -1,6 +1,7 @@
 // io.cpp
 
 #include "io.h"
+#include "math.h"
 
 #include <iostream>
 #include <limits>
@@ -58,5 +59,42 @@ double getOperand()
 		}
 
 		return num;
+	}
+}
+
+char getOperator()
+{
+	while (true) // Keep looping until the user enters a valid operator
+	{
+		char op{};
+		std::cout << "Enter a mathematical operator: ";
+		std::cin >> op;
+
+		/* NOTE: There doesn't seem to be any need to check if extraction has failed (unlike in getOperand()) since
+		 * extraction to a char (seemingly) can't fail.
+		 */ 
+		
+		// Check if any characters haven't been extracted
+		if (!inputBufferIsEmpty())
+		{
+			clearInputBuffer();
+			std::cout << "Please enter a valid operator.\n\n";
+			continue;
+		}
+
+		// Check if the operator is one of the supported operators
+		using namespace MathOperations;
+		switch (op)
+		{
+		case addition:
+		case subtraction:
+		case multiplicationStar:  // '*' character
+		case multiplicationCross: // 'x' character
+		case division:
+		case modulo:
+			return op;
+		default:
+			std::cout << "Please enter a valid operator.\n\n";
+		}
 	}
 }
